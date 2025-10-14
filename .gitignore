@@ -1,0 +1,13 @@
+# Ignore virtual environments
+.venv/
+cancer_stats_env/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
