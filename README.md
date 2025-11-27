@@ -57,7 +57,7 @@ jupyter notebook cancer_stats.ipynb
 *Cancers: Gynaecological, Uterine, Cervical*  
 - Female reproductive system cancers 
 - **Observation:** Very high incidence of **stage 1**, with relatively few cases at other stages.  
-  ➤ *This may indicate insufficient diagnostic sensitivity for later stages.*
+  ➤ *This may indicate good screening program.*
 
 ---
 
