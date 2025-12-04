@@ -14,7 +14,7 @@ This project uses cancer incidence data from [Cancer Research UK](https://www.ca
 
 After an ETL (Extract, Transform, Load) process, the data revealed distributions across cancer sites and stages, which were explored through visualizations using Matplotlib and Seaborn.
 
-An unsupervised machine learning model — KMeans clustering — was applied to the preprocessed data to group similar incidence proportions. Model performance was evaluated using the silhouette score, and dimensionality reduction was performed using Principal Component Analysis (PCA) to project the results into two dimensions for visualization.
+An unsupervised machine learning model — KMeans clustering — was applied to data that I preprocessed to remove nulls, normalized by feature engineering incidence proportions and reshaping to long form. Model performance was evaluated using the silhouette score, and dimensionality reduction was performed using Principal Component Analysis (PCA) to project the results into two dimensions for visualization.
 
 
 ## Data Source
