@@ -1,3 +1,4 @@
+```
 cancer_stats_project/
 ├── config/
 │   └── data_paths.yaml          # central config for file locations
@@ -60,7 +61,7 @@ cancer_stats_project/
 - [Results](#results)
 - [Limitations and Considerations](#limitations-and-considerations)
 - [Conclusions](#conclusions)
-
+```
 
 ## Overview
 
