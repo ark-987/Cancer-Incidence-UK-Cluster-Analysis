@@ -1,12 +1,66 @@
+cancer_stats_project/
+├── config/
+│   └── data_paths.yaml          # central config for file locations
+│
+├── data/
+│   ├── raw/                     # original CSVs
+│   │   └── CRUK_EDHub_IncidenceByStageRCRD_DataTable2025-09-28.csv
+│   └── processed/               # cleaned / transformed datasets
+│
+├── output/
+│   ├── figures/                 # generated plots / figures
+│   └── tables/                  # exported summary tables
+│
+├── src/
+│   ├── __init__.py
+│   ├── main.py                  # main script orchestrating workflow
+│   │
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── load_data.py         # functions to load raw/processed CSVs
+│   │   └── preprocess.py        # data cleaning and preprocessing
+│   │
+│   ├── features/
+│   │   ├── __init__.py
+│   │   └── build_features.py    # feature engineering
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── train_model.py       # model training
+│   │   ├── evaluate_model.py    # model evaluation
+│   │   └── model_utils.py       # helper functions for models
+│   │
+│   └── visualization/
+│       ├── __init__.py
+│       └── visualize.py         # plotting functions
+│
+├── notebooks/
+│   ├── exploratory_analysis.ipynb
+│   └── model_dev.ipynb
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_load_data.py
+│   ├── test_preprocess.py
+│   ├── test_features.py
+│   ├── test_train_model.py
+│   └── test_evaluate_model.py
+│
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── pyrightconfig.json
+
 
 ## Table of Contents
 - [Overview](#overview)
 - [Data Source](#data-source)
 - [Installation](#installation)
 - [Methodology](#methodology)
-- [Results & Conclusions](#results--conclusions)
-- [Dependencies](#dependencies)
-- [Acknowledgements](#acknowledgements)
+- [Results](#results)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Conclusions](#conclusions)
+
 
 ## Overview
 
@@ -110,9 +164,6 @@ jupyter notebook cancer_stats.ipynb
 - The PCA dimensionality reduction to 2D may have **oversimplified** the structure of the data:- Some cancers (e.g. bowel) may belong to a distinct other cluster.
 - KMeans clustering assumes **spherical clusters**, which may not reflect true biological complexity.
 
-- Cluster labels were limited to the **three most common cancers**, which may obscure less frequent but biologically distinct patterns.
-
----
 
 ### Conclusion
 
