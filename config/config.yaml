@@ -1,0 +1,5 @@
+raw_data:
+  incidence_by_stage: data/raw/CRUK_EDHub_IncidenceByStageRCRD_DataTable2025-12-05.csv
+
+processed_data:
+  incidence_by_stage: data/processed/df_stage_props.csv
