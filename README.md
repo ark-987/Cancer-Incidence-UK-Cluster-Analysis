@@ -1,12 +1,67 @@
+```
+cancer_stats_project/
+├── config/
+│   └── data_paths.yaml          # central config for file locations
+│
+├── data/
+│   ├── raw/                     # original CSVs
+│   │   └── CRUK_EDHub_IncidenceByStageRCRD_DataTable2025-09-28.csv
+│   └── processed/               # cleaned / transformed datasets
+│
+├── output/
+│   ├── figures/                 # generated plots / figures
+│   └── tables/                  # exported summary tables
+│
+├── src/
+│   ├── __init__.py
+│   ├── main.py                  # main script orchestrating workflow
+│   │
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── load_data.py         # functions to load raw/processed CSVs
+│   │   └── preprocess.py        # data cleaning and preprocessing
+│   │
+│   ├── features/
+│   │   ├── __init__.py
+│   │   └── build_features.py    # feature engineering
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── train_model.py       # model training
+│   │   ├── evaluate_model.py    # model evaluation
+│   │   └── model_utils.py       # helper functions for models
+│   │
+│   └── visualization/
+│       ├── __init__.py
+│       └── visualize.py         # plotting functions
+│
+├── notebooks/
+│   ├── exploratory_analysis.ipynb
+│   └── model_dev.ipynb
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_load_data.py
+│   ├── test_preprocess.py
+│   ├── test_features.py
+│   ├── test_train_model.py
+│   └── test_evaluate_model.py
+│
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── pyrightconfig.json
+
 
 ## Table of Contents
 - [Overview](#overview)
 - [Data Source](#data-source)
 - [Installation](#installation)
 - [Methodology](#methodology)
-- [Results & Conclusions](#results--conclusions)
-- [Dependencies](#dependencies)
-- [Acknowledgements](#acknowledgements)
+- [Results](#results)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Conclusions](#conclusions)
+```
 
 ## Overview
 
@@ -14,7 +69,7 @@ This project uses cancer incidence data from [Cancer Research UK](https://www.ca
 
 After an ETL (Extract, Transform, Load) process, the data revealed distributions across cancer sites and stages, which were explored through visualizations using Matplotlib and Seaborn.
 
-An unsupervised machine learning model — KMeans clustering — was applied to the preprocessed data to group similar incidence proportions. Model performance was evaluated using the silhouette score, and dimensionality reduction was performed using Principal Component Analysis (PCA) to project the results into two dimensions for visualization.
+An unsupervised machine learning model — KMeans clustering — was applied to data that I preprocessed to remove nulls, normalized by feature engineering incidence proportions and reshaping to long form. Model performance was evaluated using the silhouette score, and dimensionality reduction was performed using Principal Component Analysis (PCA) to project the results into two dimensions for visualization.
 
 
 ## Data Source
@@ -57,7 +112,7 @@ jupyter notebook cancer_stats.ipynb
 *Cancers: Gynaecological, Uterine, Cervical*  
 - Female reproductive system cancers 
 - **Observation:** Very high incidence of **stage 1**, with relatively few cases at other stages.  
-  ➤ *This may indicate insufficient diagnostic sensitivity for later stages.*
+  ➤ *This may indicate good screening program.*
 
 ---
 
@@ -110,9 +165,6 @@ jupyter notebook cancer_stats.ipynb
 - The PCA dimensionality reduction to 2D may have **oversimplified** the structure of the data:- Some cancers (e.g. bowel) may belong to a distinct other cluster.
 - KMeans clustering assumes **spherical clusters**, which may not reflect true biological complexity.
 
-- Cluster labels were limited to the **three most common cancers**, which may obscure less frequent but biologically distinct patterns.
-
----
 
 ### Conclusion
 
