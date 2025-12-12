@@ -5,6 +5,23 @@ from sklearn.metrics import silhouette_score
 def cluster_stage_data(df, cluster_columns=None, n_clusters=2, return_score=True):
     """
     Perform KMeans clustering on the specified stage columns and return the dataframe with cluster labels.
+    Input dataframe containing cancer stage data.
+        
+        Expected format:
+        - One row per Cancer Site per Year (or any unit of analysis).
+        - Must contain numerical stage columns (counts or proportions).
+        
+        Required columns (default):
+        - 'Stage I'
+        - 'Stage II'
+        - 'Stage III'
+        - 'Stage IV'
+
+        NOTE:
+        The dataframe must be preprocessed BEFORE passing to this function:
+        - No missing values in the stage columns
+        - Values must be numeric
+        - Grouping/aggregation must already be done upstream
     """
 
     if cluster_columns is None:
