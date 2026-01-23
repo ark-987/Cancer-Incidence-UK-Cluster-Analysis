@@ -1,7 +1,7 @@
 from pathlib import Path
 import yaml
 
-config_file_pathg=r"C:\Users\arkha\cancer_stats_project\config\config.yaml"
+config_file_path=r"C:\Users\arkha\cancer_stats_project\config\config.yaml"
 df="df_stage_props"
 dataset_key="incidence_by_stage"
 
